@@ -1,0 +1,8 @@
+{% include 'v__header.tmpl' %}
+{% if(isAdmin) %}
+	<h2>Редактор</h2>
+{% else %}
+	<h2>Вы не админ</h2>
+{% endif %}
+{{ content }}
+{% include 'v__footer.tmpl' %}

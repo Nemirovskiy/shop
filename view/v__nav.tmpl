@@ -1,0 +1,11 @@
+<ul>
+	<li><a href="/">Главная</a></li>
+	<li><a href="/">Главная</a></li>
+	<li><a href="?basket">Корзина</a></li>
+	{% if(isLogin) %}
+		<li><a href="?user">Кабинет</a></li>
+	{% endif %}
+	{% if(isAdmin) %}
+		<li><a href="?edit">Редактор</a></li>
+	{% endif %}
+</ul>

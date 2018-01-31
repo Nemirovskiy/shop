@@ -1,0 +1,8 @@
+{% include 'v__header.tmpl' %}
+{% if(isLogin) %}
+	<h2>{{ name }} Вы в своем кабинете</h2>
+{% else %}
+	<h2>Вы не авторизированы</h2>
+{% endif %}
+{{ content }}
+{% include 'v__footer.tmpl' %}

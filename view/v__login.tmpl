@@ -1,0 +1,9 @@
+{% if (isLogin) %}
+	[{{ name }}] <a href="?logout=yes">Выйти</a>
+{% else %}
+	<form action="" method="POST">
+		<input autofocus autocomplete="off" type="text" name="login" placeholder="login">
+		<input type="password" autocomplete="off" name="password" placeholder="password">
+		<input type="submit" name="" placeholder="password" value="Ok">
+	</form>
+{% endif %}
