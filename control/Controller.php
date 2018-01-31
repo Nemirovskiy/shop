@@ -1,4 +1,9 @@
 <?
+/**
+* основной контроллер
+* получает данные пользователя
+* и запускает вторичные контроллеры и модели
+**/
 session_start();
 include "control/autoload.php";
 
@@ -10,7 +15,7 @@ $page = new Page;
 $catalog = new Catalog;
 
 // запускаем обработку пользователя
-$user->userInit();
+//$user->userInit();
 
 // применяем нужную модель
 
@@ -31,10 +36,10 @@ try {
   // передаём в шаблон переменные и значения
   // выводим сформированное содержание
   echo $template->render(array(
-    'isLogin' => $user->isLogin(),
-    'name' => $user->userName(),
+    'isLogin' => User::$isLogin,
+    'name' => User::$name,
     'title' => Controller::$title,
-    'isAdmin' => $user->isAdmin(),
+    'isAdmin' => User::$isAdmin,
     'content' => $catalog->listCatalog(6)
   ));
   

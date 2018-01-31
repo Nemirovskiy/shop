@@ -1,20 +1,22 @@
 <?
 /**
-* 
+* Главный контроллер
 */
 class Controller
 {
   public static $title = 'Заголовок страницы';
-  private $name = 'index';
+  //private $name = 'index';
   public static $template = 'index';
   private static $value= '';
   private static $action= '';
 
-  public static function init(){
+  public final static function init(){
+    UserControll::userInit();
     self::getUrlPath();
-    echo 'self::$template = '.self::$template;
-    echo 'self::$value = '.self::$value;
-    echo 'self::$action = '.self::$action;
+  //  echo 'self::$template = '.self::$template;
+  //  echo 'self::$value = '.self::$value;
+  //  echo 'self::$action = '.self::$action;
+
   }
 
 
