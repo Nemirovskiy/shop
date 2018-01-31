@@ -1,9 +1,6 @@
 <?
 session_start();
 include "control/autoload.php";
-
-Controller::init();
-
 // создаем экземпляры классов
 $user = new User;
 $page = new Page;
@@ -26,16 +23,16 @@ try {
   $twig = new Twig_Environment($loader);
   
   // подгружаем шаблон
-  $template = $twig->loadTemplate('v_'.Controller::$template.'.tmpl');
+  $template = $twig->loadTemplate('v_'.$page->template.'.tmpl');
   
   // передаём в шаблон переменные и значения
   // выводим сформированное содержание
   echo $template->render(array(
     'isLogin' => $user->isLogin(),
     'name' => $user->userName(),
-    'title' => Controller::$title,
+    'title' => $page->title,
     'isAdmin' => $user->isAdmin(),
-    'content' => $catalog->listCatalog(6)
+    'content' => $catalog->listCatalog(5)
   ));
   
 } catch (Exception $e) {

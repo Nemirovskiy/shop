@@ -13,7 +13,6 @@ class DBase
 	public static function base(){
 		if(self::$connect == null){
 			self::$connect = new DBase;
-			//self::$connect->bd = new PDO("mysql:host=localhost;dbname=".DB_NAME,DB_LOGIN,DB_PASS);
 		}
 		return self::$connect;
 	}
@@ -30,9 +29,5 @@ class DBase
 			return $result->fetchAll();
 		}
 		return false;
-	}
-	// подключение к БД
-	public function connect($name,$login,$pass){
-	//	$this->bd = new PDO("mysql:host=localhost;dbname=".$name,$login,$pass);
 	}
 }

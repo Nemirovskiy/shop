@@ -10,6 +10,6 @@ include 'control/Controller.php';
 	if(is_file(DIR_VIEW.'/'.$template)) echo "Ok";
 	else echo "no Ok";
 	echo "<br>";
-	$page->getUrlPath();
+	//$page->getUrlPath();
 	?>
 </pre>

@@ -6,10 +6,15 @@ class Page
 {
 	public $title = 'Заголовок страницы';
 	private $name = 'index';
-	private $template = 'index';
-	private $content;
+	public $template = 'index';
+	public $content;
 	private $value= '';
 	private $action= '';
+
+	public function __construct()
+	{
+		$this->getUrlPath();
+	}
 
 	// получение параметров строки адреса
 	// адрес будет такого типа: site.com?user site.com?detail=123
@@ -36,33 +41,12 @@ class Page
 
 	public function getTwig($user)
 	{
-		try {
-		  // указывает где хранятся шаблоны
-		  $loader = new Twig_Loader_Filesystem('view');
-		  
-		  // инициализируем Twig
-		  $twig = new Twig_Environment($loader);
-		  
-		  // подгружаем шаблон
-		  $template = $twig->loadTemplate('v_'.$this->template.'.tmpl');
-		  
-		  // передаём в шаблон переменные и значения
-		  // выводим сформированное содержание
-		  echo $template->render(array(
-		    'isLogin' => $user->isLogin(),
-		    'name' => $user->userName(),
-		    'title' => $this->title,
-		    'isAdmin' => $user->isAdmin()
-		  ));
-		  
-		} catch (Exception $e) {
-		  die ('ERROR: ' . $e->getMessage());
-		}
+
 	}
 
 	// функция сбора целой страницы
 	public function building($user){
-		$this->getUrlPath();
-		$this->getTwig($user);	
+	//	$this->getUrlPath();
+	//	$this->getTwig($user);	
 	}
 }

@@ -1,4 +1,15 @@
 {% include 'v__header.tmpl' %}
 <h2>Главная</h2>
-{{ content }}
+<div class="lasted">
+{% for items in content %}
+	<div class="item">
+		<a href="?detail={{ items.id }}">
+			<h3>{{ items.name }}</h3>
+			<img src="img/small/{{ items.img }}" alt="{{ items.name }}">
+			<h4>{{ items.price }}</h4>
+		</a>
+		<a href="#" class="toBasket" title="Купить {{ items.name }}">Купить</a>
+	</div>
+{% endfor %}
+</div>
 {% include 'v__footer.tmpl' %}

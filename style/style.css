@@ -20,3 +20,16 @@ nav a {
     padding: 5px;
     text-decoration: none;
 }
+.lasted{
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flex;
+    display: -o-flex;
+    display: flex;
+    flex-wrap: wrap;
+}
+.item {
+    padding: 5px;
+    width: 30%;
+    text-align: center;
+}
